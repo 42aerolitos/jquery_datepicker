@@ -57,7 +57,11 @@ class JqueryDatepicker::InstanceTag < ActionView::Helpers::InstanceTag
     if format.nil?
       l tb_formatted
     else
-      tb_formatted.strftime(translate_format(format))
+      if tb_formatted.nil?
+        ""
+      else
+        tb_formatted.strftime(translate_format(format))
+      end
     end
   end
 
